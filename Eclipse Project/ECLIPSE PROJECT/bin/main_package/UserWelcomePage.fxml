@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="481.0" prefWidth="741.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main_package.UserWelcomePageController">
+  <tabs>
+  
+    <Tab text="WELCOME">
+      <content>
+        <Pane>
+          <children>
+            <Label layoutX="178.0" layoutY="131.0" prefHeight="88.0" prefWidth="386.0" text="WELCOME TO FDCX!" textOverrun="CLIP">
+              <font>
+                <Font name="MS Outlook" size="39.0" />
+              </font>
+            </Label>
+                  <Button fx:id="signOut" layoutX="658.0" layoutY="414.0" mnemonicParsing="false" onAction="#signOut" text="SIGN OUT" />
+                  <Text fx:id="username" layoutX="190.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="361.5999755859375">
+                     <font>
+                        <Font name="MS Outlook" size="39.0" />
+                     </font>
+                  </Text>
+          </children>
+        </Pane>
+      </content>
+    </Tab>
+
+    <Tab text="TRADE STOCKS">
+      <content>
+        <TabPane side="LEFT" tabClosingPolicy="UNAVAILABLE">
+          <tabs>
+            <Tab onSelectionChanged="#fillSellStocks" text="Sell Stocks">
+              <content>
+                <Pane>
+                           <children>
+                              <TableView fx:id="sellStocksTable" layoutX="36.0" layoutY="67.0" prefHeight="316.0" prefWidth="417.0" />
+                              <TextField fx:id="sellStocksUnit" layoutX="503.0" layoutY="212.0" />
+                              <Text layoutX="553.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UNITS">
+                                 <font>
+                                    <Font name="MS Outlook" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="sellStocksButton" layoutX="555.0" layoutY="255.0" mnemonicParsing="false" onAction="#sellStocks" text="SELL!" />
+                              <Text fx:id="balance_sellStocks" layoutX="503.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BALANCE: " />
+                           </children>
+                </Pane>
+              </content>
+            </Tab>
+            <Tab onSelectionChanged="#fillBuyStocks" text="Buy Stocks">
+              <content>
+                <Pane prefHeight="398.0" prefWidth="665.0">
+                			<children>
+                              <TableView fx:id="buyStocksTable" layoutX="36.0" layoutY="67.0" prefHeight="316.0" prefWidth="417.0" />
+                              <TextField fx:id="buyStocksUnit" layoutX="503.0" layoutY="212.0" />
+                              <Text layoutX="553.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UNITS">
+                                 <font>
+                                    <Font name="MS Outlook" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="buyStocksButton" layoutX="555.0" layoutY="255.0" mnemonicParsing="false" onAction="#buyStock" text="BUY!" />
+                              <Text fx:id="balance_buyStocks" layoutX="503.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BALANCE: " />
+                           </children>
+                </Pane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </content>
+    </Tab>
+
+    <Tab text="TRADE CURRENCY">
+      <content>
+        <TabPane side="LEFT" tabClosingPolicy="UNAVAILABLE">
+          <tabs>
+            <Tab onSelectionChanged="#fillSellCurrency" text="Sell Currency">
+              <content>
+                <Pane>
+                    	<children>
+                          <TableView fx:id="sellCurrencyTable" layoutX="36.0" layoutY="67.0" prefHeight="316.0" prefWidth="417.0" />
+                          <TextField fx:id="sellCurrencyUnit" layoutX="503.0" layoutY="212.0" />
+                          <Text layoutX="553.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UNITS">
+                             <font>
+                                <Font name="MS Outlook" size="18.0" />
+                             </font>
+                          </Text>
+                          <Button fx:id="sellCurrencyButton" layoutX="555.0" layoutY="255.0" mnemonicParsing="false" onAction="#sellCurrency" text="SELL!" />
+                              <Text fx:id="balance_sellCurrency" layoutX="503.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BALANCE:" />
+                       </children>
+                </Pane>
+              </content>
+            </Tab>
+            <Tab onSelectionChanged="#fillBuyCurrency" text="Buy Currency">
+              <content>
+                <Pane>
+                		<children>
+                          <TableView fx:id="buyCurrencyTable" layoutX="36.0" layoutY="67.0" prefHeight="316.0" prefWidth="417.0" />
+                          <TextField fx:id="buyCurrencyUnit" layoutX="503.0" layoutY="212.0" />
+                          <Text layoutX="553.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UNITS">
+                             <font>
+                                <Font name="MS Outlook" size="18.0" />
+                             </font>
+                          </Text>
+                          <Button fx:id="buyCurrencyButton" layoutX="555.0" layoutY="255.0" mnemonicParsing="false" onAction="#buyCurrency" text="BUY!" />
+                              <Text fx:id="balance_buyCurrency" layoutX="503.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BALANCE:" />
+                       </children>
+                </Pane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </content>
+    </Tab>
+
+    <Tab text="MANAGE SUBSCRIPTIONS">
+      <content>
+        <TabPane side="LEFT" tabClosingPolicy="UNAVAILABLE">
+          <tabs>
+            <Tab text="Subscription Plans">
+              <content>
+                <Pane>
+                           <children>
+                              <Button fx:id="NewMonthlySubs" layoutX="125.0" layoutY="226.0" mnemonicParsing="false" onAction="#newMonthly" prefHeight="50.0" prefWidth="112.0" text="Monthly | $10/m" />
+                              <Button fx:id="NewQuarterlySubs" layoutX="280.0" layoutY="226.0" mnemonicParsing="false" onAction="#newQuarterly" prefHeight="50.0" prefWidth="136.0" text="Quarterly | $22.5/3m" />
+                              <Button fx:id="NewYearlySubs" layoutX="459.0" layoutY="226.0" mnemonicParsing="false" onAction="#newYearly" prefHeight="50.0" prefWidth="112.0" text="Yearly | $65/12m" />
+                              <Text layoutX="211.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Plan">
+                                 <font>
+                                    <Font name="MS Outlook" size="52.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                </Pane>
+              </content>
+            </Tab>
+            <Tab onSelectionChanged="#updateSubsType" text="Renew Plan">
+              <content>
+                <Pane>
+                           <children>
+                              <Text fx:id="currentSubs" layoutX="148.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Plan:" wrappingWidth="464.8593292236328">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="RenewSubs" layoutX="307.0" layoutY="226.0" mnemonicParsing="false" onAction="#RenewSubs" prefHeight="36.0" prefWidth="98.0" text="RENEW!" />
+                           </children>
+                </Pane>
+              </content>
+            </Tab>
+                  <Tab onSelectionChanged="#updateSubsType_" text="Cancel Plan">
+                     <content>
+                        <Pane>
+                           <children>
+                              <Text fx:id="currentSubs_" layoutX="149.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Plan:" wrappingWidth="414.50946044921875">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="CancelSubs" layoutX="310.0" layoutY="226.0" mnemonicParsing="false" onAction="#CancelSubs_" prefHeight="39.0" prefWidth="92.0" text="CANCEL!" />
+                           </children>
+                        </Pane>
+                     </content>
+                  </Tab>
+          </tabs>
+        </TabPane>
+      </content>
+    </Tab>
+
+    <!-- Tax Reports Tab -->
+    <Tab onSelectionChanged="#updateTaxReports" text="TAX REPORTS">
+      <content>
+        <Pane>
+               <children>
+                          <TableView fx:id="taxReport" layoutX="17.0" layoutY="77.0" prefHeight="360.0" prefWidth="707.0" />
+                  <Text layoutX="299.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tax Report">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+      </content>
+    </Tab>
+
+    <!-- Manage Account Tab -->
+    <Tab text="MANAGE ACCOUNT">
+      <content>
+        <Pane prefHeight="398.0" prefWidth="678.0">
+          <children>
+            <Button fx:id="delButton" layoutX="280.0" layoutY="188.0" mnemonicParsing="false" onAction="#DeleteButtonPressed" prefHeight="76.0" prefWidth="181.0" text="DELETE ACCOUNT">
+              <font>
+                <Font name="MS Outlook" size="18.0" />
+              </font>
+            </Button>
+                  <Text layoutX="269.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Account">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+          </children>
+        </Pane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
